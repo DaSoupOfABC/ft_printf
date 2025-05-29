@@ -93,13 +93,6 @@ gcc main.c libftprintf.a -I.
 - No usage of `printf`, `sprintf`, or similar functions
 - Strict adherence to C89 (ISO C90) standards
 - Must handle memory and error cases cleanly
-- Function prototype: `int ft_printf(const char *format, ...);`
-
----
-
-## ✍️ Author
-
-Made with ❤️ for 42 School  
-[Your Name or GitHub handle here]
-
+- Function prototype: `int ft_printf(const char *format, ...);
+  
 ---
