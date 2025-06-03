@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:17:14 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 16:21:25 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/01 16:56:58 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_bonus.h"
@@ -87,7 +87,7 @@ int	ft_printnbr(int n, t_format *fmt)
 	{
 		if (fmt->plus)
 			len += ft_printstr("+");
-		else if(fmt->space)
+		else if (fmt->space)
 			len += ft_printstr(" ");
 	}
 	len += ft_printstr(res);

@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:43:20 by jenlee            #+#    #+#             */
-/*   Updated: 2025/05/30 18:25:34 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/01 16:56:20 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf_bonus.h"
@@ -29,12 +29,12 @@ int	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 		i++;
 	return (1);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*copy;
 	int		i;

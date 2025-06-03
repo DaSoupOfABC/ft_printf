@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:41:15 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 16:05:16 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/01 16:59:57 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_bonus.h"
@@ -42,8 +42,9 @@ void	struct_zero(t_format *fmt)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int		count;
+	va_list		args;
+	int			count;
+	t_format	fmt;
 
 	va_start(args, format);
 	count = 0;
@@ -52,7 +53,6 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			t_format fmt;
 			struct_zero(&fmt);
 			format += parse_flag(format, &fmt);
 			if (fmt.specifier == 'c')
@@ -66,7 +66,8 @@ int	ft_printf(const char *format, ...)
 			else if (fmt.specifier == 'u')
 				count += ft_print_u(va_arg(args, unsigned int));
 			else if (fmt.specifier == 'x' || fmt.specifier == 'X')
-				count += ft_print_x(va_arg(args, unsigned int), fmt.specifier, &fmt);
+				count += ft_print_x(va_arg(args, unsigned int), \
+fmt.specifier, &fmt);
 			else if (fmt.specifier == '%')
 				count += write(1, "%", 1);
 		}

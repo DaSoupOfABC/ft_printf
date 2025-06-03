@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:27:46 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 15:43:11 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/01 16:58:17 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 
 typedef struct s_format
 {
-	int	plus;
-	int	space;
-	int	hash;
+	int		plus;
+	int		space;
+	int		hash;
 	char	specifier;
-} t_format;
+}	t_format;
 
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
