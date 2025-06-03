@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:17:14 by jenlee            #+#    #+#             */
-/*   Updated: 2025/05/29 16:52:24 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/01 16:53:37 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -87,4 +87,3 @@ int	ft_printnbr(int n)
 	free(res);
 	return (len);
 }
-
