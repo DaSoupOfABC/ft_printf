@@ -6,7 +6,7 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:41:15 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 16:59:57 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/09 17:37:56 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_bonus.h"
@@ -40,6 +40,29 @@ void	struct_zero(t_format *fmt)
 	fmt->specifier = 0;
 }
 
+int	check_specifier(t_format *fmt, va_list args)
+{
+	int	count;
+
+	count = 0;
+	if (fmt->specifier == 'c')
+		count += ft_putchar(va_arg(args, int));
+	else if (fmt->specifier == 's')
+		count += ft_printstr(va_arg(args, char *));
+	else if (fmt->specifier == 'p')
+		count += ft_print_ptr(va_arg(args, unsigned long long));
+	else if (fmt->specifier == 'd' || fmt->specifier == 'i')
+		count += ft_printnbr(va_arg(args, int), fmt);
+	else if (fmt->specifier == 'u')
+		count += ft_print_u(va_arg(args, unsigned int));
+	else if (fmt->specifier == 'x' || fmt->specifier == 'X')
+		count += ft_print_x(va_arg(args, unsigned int), \
+fmt->specifier, fmt);
+	else if (fmt->specifier == '%')
+		count += write(1, "%", 1);
+	return (count);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list		args;
@@ -55,21 +78,7 @@ int	ft_printf(const char *format, ...)
 			format++;
 			struct_zero(&fmt);
 			format += parse_flag(format, &fmt);
-			if (fmt.specifier == 'c')
-				count += ft_putchar(va_arg(args, int));
-			else if (fmt.specifier == 's')
-				count += ft_printstr(va_arg(args, char *));
-			else if (fmt.specifier == 'p')
-				count += ft_print_ptr(va_arg(args, unsigned long long));
-			else if (fmt.specifier == 'd' || fmt.specifier == 'i')
-				count += ft_printnbr(va_arg(args, int), &fmt);
-			else if (fmt.specifier == 'u')
-				count += ft_print_u(va_arg(args, unsigned int));
-			else if (fmt.specifier == 'x' || fmt.specifier == 'X')
-				count += ft_print_x(va_arg(args, unsigned int), \
-fmt.specifier, &fmt);
-			else if (fmt.specifier == '%')
-				count += write(1, "%", 1);
+			count += check_specifier(&fmt, args);
 		}
 		else
 			count += write(1, format, 1);
@@ -78,8 +87,8 @@ fmt.specifier, &fmt);
 	va_end(args);
 	return (count);
 }
-
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
 

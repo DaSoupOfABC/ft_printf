@@ -6,12 +6,12 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 18:50:58 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 16:24:37 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/09 17:35:07 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf_bonus.h"
 
-int	hex_len(unsigned int num, t_format *fmt)
+static int	hex_len(unsigned int num, t_format *fmt)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	hex_len(unsigned int num, t_format *fmt)
 	return (i);
 }
 
-void	ft_hex(unsigned int num, const char x_X)
+static void	ft_hex(unsigned int num, const char x_X)
 {
 	if (num >= 16)
 	{

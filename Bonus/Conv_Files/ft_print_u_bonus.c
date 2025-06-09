@@ -6,12 +6,12 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:43:20 by jenlee            #+#    #+#             */
-/*   Updated: 2025/06/01 16:56:20 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/04 14:04:59 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf_bonus.h"
 
-int	num_len(unsigned int num)
+static int	num_len(unsigned int num)
 {
 	int	len;
 
@@ -24,7 +24,7 @@ int	num_len(unsigned int num)
 	return (len);
 }
 
-int	ft_strlen(const char *s)
+static int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	ft_strlen(const char *s)
 	return (1);
 }
 
-char	*ft_strdup(const char *s)
+static char	*ft_strdup(const char *s)
 {
 	char	*copy;
 	int		i;
@@ -54,7 +54,7 @@ char	*ft_strdup(const char *s)
 	return (copy);
 }
 
-char	*ft_uitoa(unsigned int num)
+static char	*ft_uitoa(unsigned int num)
 {
 	char	*n;
 	int		len;

@@ -6,12 +6,12 @@
 /*   By: jenlee <jenlee@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:01:43 by jenlee            #+#    #+#             */
-/*   Updated: 2025/05/30 18:25:28 by jenlee           ###   ########.fr       */
+/*   Updated: 2025/06/04 14:07:47 by jenlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf_bonus.h"
 
-void	print_ptr(unsigned long long num)
+static void	print_ptr(unsigned long long num)
 {
 	if (num >= 16)
 	{
@@ -27,7 +27,7 @@ void	print_ptr(unsigned long long num)
 	}
 }
 
-int	ptr_len(unsigned long long num)
+static int	ptr_len(unsigned long long num)
 {
 	int	i;
 
